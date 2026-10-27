@@ -1,0 +1,60 @@
+{# Footer ของ Ckan-weeb: แทนที่ footer.html ต้นฉบับของ CKAN ทั้งไฟล์ #}
+<style>
+  .site-footer { background: linear-gradient(135deg, #1a0b3d 0%, #2b1055 60%, #4b1d8f 100%); color: #f3e8ff; padding: 34px 0 14px; }
+  .site-footer h4 { color: #ffd1e6; font-size: 16px; font-weight: 700; margin: 0 0 12px; }
+  .site-footer p, .site-footer address { color: #e9d8ff; font-style: normal; line-height: 1.75; }
+  .site-footer a { color: #f3e8ff; }
+  .site-footer a:hover { color: #ff7eb3; text-decoration: none; }
+  .site-footer .weeb-footer-links li { margin-bottom: 7px; }
+  .site-footer .weeb-footer-links li a::before { content: "› "; color: #ff7eb3; }
+  .weeb-footer-attribution { border-top: 1px solid rgba(255,255,255,.2); margin-top: 18px; padding-top: 12px; text-align: center; }
+  .weeb-footer-attribution p { margin: 0; font-size: 13px; }
+</style>
+<footer class="site-footer">
+  <div class="container">
+    <div class="row">
+
+      {# ข้อ 7: ที่อยู่ เบอร์โทร อีเมล (แก้ข้อความตรงนี้) #}
+      <div class="col-md-5 weeb-footer-contact">
+        <h4>Ckan-weeb</h4>
+        <p>ศูนย์รวมข้อมูลอนิเมะ | Anime Data Hub</p>
+        <address>
+          ชื่อหน่วยงานของคุณ<br>
+          เลขที่ 123 ถนนตัวอย่าง ตำบลตัวอย่าง อำเภอตัวอย่าง จังหวัดตัวอย่าง 20000<br>
+          โทรศัพท์: 038-000-000<br>
+          อีเมล: <a href="mailto:your-email@example.com">your-email@example.com</a>
+        </address>
+      </div>
+
+      {# ข้อ 8: ลิงก์ภายในระบบ #}
+      <div class="col-md-3 weeb-footer-links">
+        <h4>เมนู</h4>
+        <ul class="list-unstyled">
+          <li><a href="{{ h.url_for('dataset.search') }}">ชุดข้อมูล (Datasets)</a></li>
+          <li><a href="{{ h.url_for('organization.index') }}">หน่วยงาน (Organizations)</a></li>
+          <li><a href="{{ h.url_for('group.index') }}">กลุ่ม (Groups)</a></li>
+          <li><a href="{{ h.url_for('home.about') }}">เกี่ยวกับระบบ (About)</a></li>
+        </ul>
+      </div>
+
+      {# ข้อ 8: ลิงก์ไปเว็บไซต์ภายนอก (แก้/เพิ่มได้) #}
+      <div class="col-md-4 weeb-footer-links">
+        <h4>ลิงก์ที่เกี่ยวข้อง</h4>
+        <ul class="list-unstyled">
+          <li><a href="https://ckan.org" target="_blank" rel="noopener">CKAN.org</a></li>
+          <li><a href="https://docs.ckan.org" target="_blank" rel="noopener">CKAN Documentation</a></li>
+          <li><a href="https://myanimelist.net" target="_blank" rel="noopener">MyAnimeList</a></li>
+          <li><a href="https://data.go.th" target="_blank" rel="noopener">data.go.th</a></li>
+          <li><a href="https://www.kaggle.com/datasets/azathoth42/myanimelist" target="_blank" rel="noopener">MyAnimeList Dataset (Kaggle)</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="row">
+      <div class="col-md-12 weeb-footer-attribution">
+        <p>© Ckan-weeb · Powered by <a href="https://ckan.org" target="_blank" rel="noopener">CKAN</a></p>
+      </div>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,113 @@
+{# ข้อ 9: แบนเนอร์หน้าแรก Ckan-weeb (420 x 220) แทนที่ promoted.html ต้นฉบับทั้งไฟล์ #}
+{% set intro = g.site_intro_text %}
+
+<style>
+  .weeb-promoted {
+    padding: 32px 34px 30px;
+    background: linear-gradient(180deg, #ffffff 0%, #fbf6ff 100%);
+    border-radius: 14px;
+    position: relative;
+    overflow: hidden;
+  }
+  .weeb-promoted::before {            /* แถบสีด้านบนของการ์ด */
+    content: "";
+    position: absolute; left: 0; top: 0; right: 0; height: 6px;
+    background: linear-gradient(90deg, #7b2ff7, #ff4d8d);
+  }
+  .weeb-intro h1, .weeb-intro h2 {
+    color: #2b1055;
+    font-weight: 800;
+    margin: 6px 0 14px;
+    line-height: 1.25;
+  }
+  .weeb-intro h2::after {             /* ขีดไล่สีใต้หัวข้อ */
+    content: "";
+    display: block;
+    width: 64px; height: 4px; margin-top: 10px;
+    border-radius: 4px;
+    background: linear-gradient(90deg, #7b2ff7, #ff4d8d);
+  }
+  .weeb-intro p { color: #3b2f55; line-height: 1.75; margin-bottom: 12px; }
+  .weeb-intro code {
+    background: #ffe3f0; color: #c2185b;
+    padding: 2px 8px; border-radius: 999px; font-size: 0.9em;
+  }
+
+  /* ปุ่มลัด */
+  .weeb-cta { display: flex; flex-wrap: wrap; gap: 10px; margin: 18px 0 24px; }
+  .weeb-cta a {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 999px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: transform .15s ease, box-shadow .15s ease;
+  }
+  .weeb-cta a:hover { transform: translateY(-2px); }
+  .weeb-cta .primary {
+    color: #fff;
+    background: linear-gradient(90deg, #7b2ff7, #ff4d8d);
+    box-shadow: 0 6px 16px rgba(123, 47, 247, .35);
+  }
+  .weeb-cta .ghost { color: #7b2ff7; background: #fff; border: 2px solid #d9c2ff; }
+  .weeb-cta .ghost:hover { border-color: #7b2ff7; }
+
+  /* แบนเนอร์ 420 x 220 */
+  .weeb-banner { margin: 0 auto; width: 420px; max-width: 100%; }
+  .weeb-banner img {
+    display: block;
+    width: 420px;
+    height: 220px;
+    max-width: 100%;
+    object-fit: cover;
+    border-radius: 14px 14px 0 0;
+    box-shadow: 0 10px 28px rgba(43, 16, 85, .28);
+  }
+  .weeb-banner figcaption {
+    background: linear-gradient(90deg, #2b1055, #4b1d8f);
+    color: #fff;
+    font-weight: 700;
+    font-size: 14px;
+    padding: 11px 16px;
+    border-radius: 0 0 14px 14px;
+    box-shadow: 0 10px 28px rgba(43, 16, 85, .28);
+  }
+  .weeb-banner figcaption span { color: #ffb3d3; }
+
+  /* ป้ายจุดเด่น */
+  .weeb-chips { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin-top: 22px; }
+  .weeb-chips span {
+    background: #f3e8ff; color: #5b21b6;
+    padding: 6px 14px; border-radius: 999px; font-size: 13px; font-weight: 600;
+  }
+  @media (max-width: 480px) {
+    .weeb-promoted { padding: 24px 18px; }
+    .weeb-banner img { height: auto; aspect-ratio: 420 / 220; }
+  }
+</style>
+
+<div class="box weeb-promoted">
+  <div class="weeb-intro">
+    {% if intro %}
+      {{ h.render_markdown(intro) }}
+    {% else %}
+      <h2>ยินดีต้อนรับสู่ Ckan-weeb</h2>
+      <p>ศูนย์รวมข้อมูลอนิเมะแบบเปิด</p>
+    {% endif %}
+  </div>
+
+  <div class="weeb-cta">
+    <a class="primary" href="{{ h.url_for('dataset.search') }}">🔎 เริ่มค้นหาชุดข้อมูล</a>
+    <a class="ghost" href="{{ h.url_for('organization.index') }}">🏢 หน่วยงาน</a>
+    <a class="ghost" href="{{ h.url_for('home.about') }}">ℹ️ เกี่ยวกับระบบ</a>
+  </div>
+
+  <figure class="weeb-banner">
+    <img src="{{ h.url_for_static('/images/banner.svg') }}" alt="Ckan-weeb Anime Data Hub">
+    <figcaption>✨ Anime Data Hub <span>· ข้อมูลจาก MyAnimeList</span></figcaption>
+  </figure>
+
+  <div class="weeb-chips">
+    <span>ค้นหา</span><span>ดูตัวอย่างตาราง</span><span>ดาวน์โหลด CSV</span><span>เรียกผ่าน API</span>
+  </div>
+</div>

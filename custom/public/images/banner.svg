@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 220" width="420" height="220" role="img" aria-label="Ckan-weeb banner">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#2b1055"/>
+      <stop offset="0.55" stop-color="#7b2ff7"/>
+      <stop offset="1" stop-color="#ff4d8d"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.78" cy="0.3" r="0.5">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="420" height="220" fill="url(#bg)"/>
+  <rect width="420" height="220" fill="url(#glow)"/>
+  <!-- ดวงจันทร์ -->
+  <circle cx="330" cy="62" r="30" fill="#fff4fb" opacity="0.92"/>
+  <circle cx="341" cy="54" r="30" fill="#7b2ff7" opacity="0.55"/>
+  <!-- ดาว -->
+  <g fill="#ffffff">
+    <path d="M60 30 l3 9 9 3 -9 3 -3 9 -3 -9 -9 -3 9 -3z"/>
+    <path d="M250 24 l2 6 6 2 -6 2 -2 6 -2 -6 -6 -2 6 -2z" opacity="0.9"/>
+    <path d="M385 120 l2 6 6 2 -6 2 -2 6 -2 -6 -6 -2 6 -2z" opacity="0.8"/>
+    <circle cx="150" cy="22" r="1.8"/><circle cx="215" cy="70" r="1.4"/>
+    <circle cx="30" cy="95" r="1.6"/><circle cx="290" cy="110" r="1.4"/>
+  </g>
+  <!-- กลีบซากุระ -->
+  <g fill="#ffd1e6" opacity="0.9">
+    <ellipse cx="95" cy="75" rx="6" ry="3.5" transform="rotate(30 95 75)"/>
+    <ellipse cx="190" cy="40" rx="5" ry="3" transform="rotate(-20 190 40)"/>
+    <ellipse cx="365" cy="170" rx="6" ry="3.5" transform="rotate(50 365 170)"/>
+    <ellipse cx="270" cy="150" rx="5" ry="3" transform="rotate(-40 270 150)"/>
+  </g>
+  <!-- เงาเมือง -->
+  <path d="M0 220 V178 h28 v-22 h22 v30 h20 v-40 h26 v34 h18 v-18 h24 v26 h22 v-30 h26 v36 h20 v-24 h30 v28 h24 v-16 h26 v22 h34 V220 Z" fill="#1a0b3d" opacity="0.88"/>
+  <!-- ข้อความ -->
+  <text x="24" y="128" font-family="'Segoe UI', Arial, sans-serif" font-size="40" font-weight="700" fill="#ffffff">Ckan-<tspan fill="#ffd1e6">weeb</tspan></text>
+  <text x="26" y="152" font-family="'Segoe UI', Tahoma, Arial, sans-serif" font-size="15" fill="#f3e8ff">Anime Data Hub</text>
+  <text x="26" y="172" font-family="'Segoe UI', Tahoma, Arial, sans-serif" font-size="15" fill="#f3e8ff" opacity="0.85">MyAnimeList Open Data</text>
+</svg>
