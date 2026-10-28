@@ -1,0 +1,5 @@
+-e git+https://github.com/ckan/ckanext-pdfview.git#egg=ckanext-pdfview
+-e git+https://github.com/ckan/ckanext-scheming.git#egg=ckanext-scheming
+-e git+https://github.com/ckan/ckanext-hierarchy.git#egg=ckanext-hierarchy
+-e git+https://github.com/ckan/ckanext-dcat.git#egg=ckanext-dcat
+-e git+https://github.com/ckan/ckanext-xloader.git#egg=ckanext-xloader

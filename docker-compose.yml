@@ -33,6 +33,10 @@ services:
       - redisnet
     env_file:
       - .env
+      # --- เพิ่มตั้งค่า Plugins ตรงนี้ ---
+    environment:
+      - CKAN__PLUGINS=image_view text_view datatables_view datastore datapusher envvars
+    # -------------------------------
     depends_on:
       db:
         condition: service_healthy
